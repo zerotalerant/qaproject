@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-@ToString
 public class CurrencyModel {
     private Long id;
     @NotEmpty

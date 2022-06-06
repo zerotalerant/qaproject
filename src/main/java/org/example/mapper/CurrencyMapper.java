@@ -1,20 +1,22 @@
 package org.example.mapper;
 
 import org.example.entity.CurrencyEntity;
+import org.example.model.CurrencyModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.Currency;
+import java.util.List;
 
 @Mapper
 public interface CurrencyMapper {
     CurrencyMapper INSTANCE = Mappers.getMapper ( CurrencyMapper.class );
 
-    Currency toCurrencyEntity ( CurrencyRequest currencyRequest );
+    CurrencyEntity toCurrencyEntity ( CurrencyModel currencyRequest );
 
-    CurrencyResponse toCurrencyResponse ( Currency currency );
+    CurrencyModel toCurrencyEntity ( Currency currency );
 
-    CurrencyResponse toCurrencyResponse ( CurrencyRequest currencyRequest );
+    CurrencyModel toCurrencyModel ( CurrencyEntity currencyRequest );
 
-    List<CurrencyResponse> toCurrencyResponse ( List<Currency> currencies );
+    List<CurrencyModel> toCurrencyEntity ( List<CurrencyEntity> currencies );
 }
